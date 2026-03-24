@@ -81,7 +81,8 @@ impl AvroDeserializerConfig {
 impl From<&AvroDeserializerOptions> for AvroSerializerOptions {
     fn from(value: &AvroDeserializerOptions) -> Self {
         Self {
-            schema: value.schema.clone(),
+            schema: Some(value.schema.clone()),
+            schema_registry: None,
         }
     }
 }
